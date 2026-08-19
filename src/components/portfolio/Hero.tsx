@@ -7,8 +7,8 @@ import { ParticleField } from "./Backdrop";
 
 const ROLES = [
   "AI/ML Engineer",
-  "Machine Learning Enthusiast",
-  "Data Science Explorer",
+  "Machine Learning Developer",
+  "AI & Data Science Enthusiast",
 ];
 
 function Typewriter() {
@@ -43,7 +43,7 @@ function Typewriter() {
 }
 
 const STATS = [
-  { value: "2+", label: "AI Projects" },
+  { value: "5+", label: "AI Projects" },
   { value: "10+", label: "Technologies" },
   { value: "7th", label: "Semester B.Tech" },
 ];

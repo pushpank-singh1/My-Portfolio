@@ -37,8 +37,8 @@ export function About() {
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {[
                 { icon: LineChart, label: "Data Science" },
-                { icon: Layers, label: "Deep Learning" },
-                { icon: Binary, label: "Reinforcement Learning" },
+                { icon: Layers, label: "Machine Learning" },
+                { icon: Binary, label: "Deep Learning" },
                 { icon: Rocket, label: "Model Deployment" },
               ].map((item) => (
                 <div

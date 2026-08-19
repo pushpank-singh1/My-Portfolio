@@ -5,6 +5,36 @@ import { Reveal, SectionHeading } from "./Reveal";
 
 const PROJECTS = [
   {
+    id: "airbnb",
+    title: "NYC Airbnb Type Classifier",
+    category: "Machine Learning",
+    icon: Grid3x3,
+    tech: ["KNN Classifier", "FastAPI", "Kaggle"],
+    description:
+    "Developed a machine learning model to predict Airbnb room types based on listing features such as location, price, availability, and host details.",
+    extra:
+    "Built an end-to-end prediction system with data preprocessing and classification to help identify the most likely room type for a given listing.",
+    links: [
+      { label: "GitHub", href: "https://github.com/pushpank-singh1/NYC-Airbnb-Room-Type-Classifier", icon: Github },
+      { label: "Live Demo", href: "https://nyc-airbnb-room-type-classifier.onrender.com/", icon: ArrowUpRight },
+    ],
+  },
+  {
+    id: "creditwise",
+    title: "CreditWise - Loan Approval Prediction App",
+    category: "Machine Learning",
+    icon: Grid3x3,
+    tech: ["Logistic Regression Model", "Streamlit"],
+    description:
+    "Developed a Loan Approval Prediction Application using Logistic Regression Model and Streamlit. ",
+    extra:
+    "It has 88% Accuracy and 86% Precision in making correct predictions.",
+    links: [
+      { label: "GitHub", href: "https://github.com/pushpank-singh1/CreditWise", icon: Github },
+      { label: "Live Demo", href: "https://pushpank-singh1-creditwise-app-rskrve.streamlit.app/", icon: ArrowUpRight },
+    ],
+  },
+    {
     id: "summarizer",
     title: "Text Summarizer App",
     category: "Deep Learning",
@@ -36,7 +66,7 @@ const PROJECTS = [
   {
     id: "cliff",
     title: "Cliff Walking",
-    category: "Reinforcement Learning",
+    category: "Deep Learning",
     icon: Grid3x3,
     tech: ["NumPy", "Gymnasium", "Reinforcement Learning"],
     description:
@@ -49,10 +79,110 @@ const PROJECTS = [
   },
 ];
 
-const FILTERS = ["All", "Reinforcement Learning", "Deep Learning"];
+const FILTERS = ["All", "Machine Learning", "Deep Learning"];
 
 /** Small animated visual standing in for each project's environment. */
 function ProjectVisual({ id }: { id: string }) {
+
+  if (id === "airbnb") {
+    return (
+      <div className="flex w-full items-center justify-center gap-3">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="glass rounded-2xl p-4"
+        >
+          <div className="text-3xl">🏠</div>
+          <div className="mt-2 text-xs text-muted-foreground">
+            Entire Home
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="glass rounded-2xl p-4"
+        >
+          <div className="text-3xl">🛏️</div>
+          <div className="mt-2 text-xs text-muted-foreground">
+            Private Room
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="glass rounded-2xl p-4"
+        >
+          <div className="text-3xl">🏨</div>
+          <div className="mt-2 text-xs text-muted-foreground">
+            Shared Room
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
+
+   if (id === "creditwise") {
+    return (
+      <div className="flex w-full items-center justify-center gap-6">
+        {/* Credit Score */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative grid size-28 place-items-center rounded-full border-8 border-primary/30"
+        >
+          <div className="absolute inset-0 rounded-full border-4 border-accent/70" />
+          <div className="text-center">
+            <div className="text-2xl font-bold text-gradient">742</div>
+            <div className="text-[10px] text-muted-foreground">
+              Credit Score
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Prediction */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="glass rounded-2xl px-5 py-4"
+        >
+          <div className="text-xs text-muted-foreground">
+            Loan Prediction
+          </div>
+
+          <div className="mt-1 text-lg font-semibold text-accent">
+            ✓ Approved
+          </div>
+
+          <div className="mt-2 h-1.5 w-32 overflow-hidden rounded-full bg-secondary">
+            <motion.div
+               initial={{ width: 0 }}
+              whileInView={{ width: "88%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="bg-gradient-brand h-full rounded-full"
+            />
+          </div>
+
+          <div className="mt-1 text-[10px] text-muted-foreground">
+            88% Accuracy
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
+
   if (id === "summarizer") {
     return (
       <div className="flex h-full w-full items-center justify-between gap-6 px-3">
