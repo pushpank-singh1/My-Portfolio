@@ -1,9 +1,62 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Github, Gamepad2, Grid3x3, Icon } from "lucide-react";
+import { ArrowUpRight, BrainCircuit, ScanFace, Github, Gamepad2, Grid3x3, Icon } from "lucide-react";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const PROJECTS = [
+  {
+    id: "ai-attendance",
+    title: "Intelligent AI Attendance System",
+    category: "Artificial Intelligence",
+    icon: ScanFace,
+    tech: [
+      "Python",
+      "Face Recognition",
+      "SVC",
+      "Streamlit",
+      "Supabase",
+    ],
+    description:
+      "Developed an AI-powered attendance management system that uses facial recognition to identify students and streamline classroom attendance tracking.",
+    extra:
+      "Integrated a machine learning-based face recognition pipeline with a Streamlit interface and Supabase database to support teacher authentication, subject management, and attendance record retrieval.",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/pushpank-singh1/Intelligent-AI-Attendance-System",
+        icon: Github,
+      },
+      {
+    label: "Live Demo",
+    href: "....",
+    icon: ArrowUpRight,
+    },
+    ],
+  },
+
+  {
+    id: "studentpulse",
+    title: "StudentPulse AI — Mental Health Score Predictor",
+    category: "Machine Learning",
+    icon: BrainCircuit,
+    tech: ["Python", "Scikit-learn", "Pandas", "FastAPI"],
+    description:
+    "Developed an AI-powered student wellness application that predicts mental health scores using lifestyle, academic, and behavioral factors.",
+    extra:
+    "Built an end-to-end machine learning solution integrating data preprocessing, model training, and a FastAPI backend to deliver real-time predictions through a web interface.",
+    links: [
+    {
+    label: "GitHub",
+    href: "https://github.com/pushpank-singh1/Mental-Health-Score",
+    icon: Github,
+    },
+    {
+    label: "Live Demo",
+    href: "https://studentwellnesspredictor-m99z.onrender.com",
+    icon: ArrowUpRight,
+    },
+    ],
+  },
   {
     id: "airbnb",
     title: "NYC Airbnb Type Classifier",
@@ -79,10 +132,236 @@ const PROJECTS = [
   },
 ];
 
-const FILTERS = ["All", "Machine Learning", "Deep Learning"];
+const FILTERS = ["All", "Artificial Intelligence", "Machine Learning", "Deep Learning"];
 
 /** Small animated visual standing in for each project's environment. */
 function ProjectVisual({ id }: { id: string }) {
+
+  
+  
+  
+if (id === "ai-attendance") {
+  return (
+    <div className="grid grid-cols-2 gap-3">
+      {/* AI Face Scanner */}
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4 }}
+        className="glass flex items-center gap-3 rounded-xl p-3"
+      >
+        <div className="relative flex h-16 w-14 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/5">
+          <svg
+            viewBox="0 0 60 70"
+            className="h-12 w-10 text-primary"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          >
+            <path d="M12 28 C12 5 48 5 48 28 V39 C48 55 40 63 30 63 C20 63 12 55 12 39 Z" />
+            <path d="M20 31 H25 M35 31 H40 M25 45 Q30 50 35 45" />
+            <path d="M12 20 H5 V9 H17 M43 9 H55 V20 H48" />
+            <path d="M5 48 V59 H17 M43 59 H55 V48" />
+          </svg>
+
+          <motion.div
+            animate={{ y: [0, 44, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute left-1 right-1 top-2 h-px bg-primary shadow-[0_0_6px_hsl(var(--primary))]"
+          />
+        </div>
+
+        <div className="min-w-0">
+          <div className="mb-1 flex items-center gap-1.5">
+            <motion.span
+              animate={{ opacity: [1, 0.3, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="h-1.5 w-1.5 rounded-full bg-emerald-400"
+            />
+            <span className="text-[9px] tracking-wider text-muted-foreground">
+              AI SCANNER
+            </span>
+          </div>
+          <p className="text-xs font-semibold">Face Recognition</p>
+          <p className="mt-1 text-[10px] text-muted-foreground">
+            Smart identification
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Attendance Dashboard */}
+      <motion.div
+        initial={{ opacity: 0, x: 10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.15 }}
+        className="glass rounded-xl p-3"
+      >
+        <div className="mb-3 flex items-center justify-between">
+          <span className="text-[9px] tracking-wider text-muted-foreground">
+            ATTENDANCE SYSTEM
+          </span>
+          <span className="text-xs text-primary">▦</span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-sm">
+            🎓
+          </div>
+          <div className="min-w-0">
+            <p className="truncate text-xs font-semibold">Teacher Panel</p>
+            <p className="text-[10px] text-muted-foreground">
+              Attendance records
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-3 flex items-center gap-1.5">
+          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+            <motion.div
+              initial={{ width: "0%" }}
+              whileInView={{ width: "85%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="h-full rounded-full bg-primary"
+            />
+          </div>
+          <span className="text-[9px] text-muted-foreground">AI</span>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+  
+
+if (id === "studentpulse") {
+  return (
+    <div className="grid grid-cols-2 gap-3">
+      {/* Wellness Prediction Gauge */}
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4 }}
+        className="glass flex items-center gap-3 rounded-xl p-3"
+      >
+        <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/5">
+          <svg
+            viewBox="0 0 64 64"
+            className="h-14 w-14 -rotate-90"
+            fill="none"
+          >
+            <circle
+              cx="32"
+              cy="32"
+              r="24"
+              stroke="currentColor"
+              strokeWidth="4"
+              className="text-muted/40"
+            />
+            <motion.circle
+              cx="32"
+              cy="32"
+              r="24"
+              stroke="currentColor"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeDasharray={String(2 * Math.PI * 24)}
+              initial={{ strokeDashoffset: 2 * Math.PI * 24 }}
+              whileInView={{
+                strokeDashoffset: 2 * Math.PI * 24 * 0.28,
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="text-primary"
+            />
+          </svg>
+
+          <div className="absolute text-center">
+            <p className="text-sm font-bold">72</p>
+            <p className="text-[8px] text-muted-foreground">/100</p>
+          </div>
+        </div>
+
+        <div className="min-w-0">
+          <div className="mb-1 flex items-center gap-1.5">
+            <motion.span
+              animate={{ opacity: [1, 0.3, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="h-1.5 w-1.5 rounded-full bg-emerald-400"
+            />
+            <span className="text-[9px] tracking-wider text-muted-foreground">
+              ML PREDICTION
+            </span>
+          </div>
+
+          <p className="text-xs font-semibold">Wellness Score</p>
+          <p className="mt-1 text-[10px] text-muted-foreground">
+            Mental health analysis
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Student Wellness Dashboard */}
+      <motion.div
+        initial={{ opacity: 0, x: 10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.15 }}
+        className="glass rounded-xl p-3"
+      >
+        <div className="mb-3 flex items-center justify-between">
+          <span className="text-[9px] tracking-wider text-muted-foreground">
+            STUDENT WELLNESS
+          </span>
+          <span className="text-sm text-primary">✦</span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-sm">
+            🌱
+          </div>
+          <div className="min-w-0">
+            <p className="truncate text-xs font-semibold">AI Insights</p>
+            <p className="text-[10px] text-muted-foreground">
+              Wellbeing indicators
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-3 space-y-2">
+          {[
+            { label: "Sleep", width: "75%", color: "bg-sky-400" },
+            { label: "Stress", width: "45%", color: "bg-amber-400" },
+            { label: "Focus", width: "82%", color: "bg-primary" },
+          ].map((item, index) => (
+            <div key={item.label} className="flex items-center gap-2">
+              <span className="w-9 shrink-0 text-[9px] text-muted-foreground">
+                {item.label}
+              </span>
+
+              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                <motion.div
+                  initial={{ width: "0%" }}
+                  whileInView={{ width: item.width }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.25 + index * 0.12,
+                  }}
+                  className={`h-full rounded-full ${item.color}`}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 
   if (id === "airbnb") {
     return (

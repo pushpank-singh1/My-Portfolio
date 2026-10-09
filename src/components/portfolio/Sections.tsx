@@ -5,6 +5,8 @@ import {
   Code2,
   Database,
   GraduationCap,
+  Globe,
+  Wrench,
   Layers,
   LineChart,
   Rocket,
@@ -60,7 +62,7 @@ export function About() {
                 {
                   title: "JSS Academy Of Technical Education, Noida",
                   meta: "B.Tech in Information Technology, 2023 - 2027",
-                  note: "Grade : 7.76",
+                  note: "Grade : 7.77",
                 },
                 {
                   title: "T.R.M. Public School, Ghaziabad",
@@ -90,40 +92,63 @@ export function About() {
   );
 }
 
+
 const SKILL_GROUPS = [
   {
     icon: Code2,
-    group: "Programming",
+    group: "Programming Languages",
     skills: [
-      { name: "Python", level: 92 },
+      { name: "Python", level: 90 },
       { name: "C++", level: 78 },
-      { name: "SQL", level: 80 },
+      { name: "SQL", level: 82 },
     ],
   },
   {
     icon: BrainCircuit,
-    group: "Machine Learning",
+    group: "AI & Machine Learning",
     skills: [
       { name: "Machine Learning", level: 88 },
-      { name: "Deep Learning", level: 84 },
-      { name: "Data Science", level: 82 },
+      { name: "Deep Learning", level: 80 },
+      { name: "Data Science", level: 84 },
+      { name: "Model Evaluation", level: 82 },
     ],
   },
   {
     icon: Layers,
-    group: "Frameworks",
+    group: "ML Libraries & Frameworks",
     skills: [
-      { name: "PyTorch", level: 85 },
-      { name: "TensorFlow", level: 80 },
+      { name: "Scikit-learn", level: 88 },
+      { name: "Pandas", level: 88 },
+      { name: "NumPy", level: 85 },
+      { name: "PyTorch", level: 80 },
     ],
   },
   {
     icon: Database,
-    group: "Web & Tools",
+    group: "Data & Databases",
     skills: [
-      { name: "HTML", level: 85 },
-      { name: "CSS", level: 80 },
-      { name: "Git", level: 82 },
+      { name: "MySQL", level: 78 },
+      { name: "Data Preprocessing", level: 85 },
+      { name: "Exploratory Data Analysis", level: 82 },
+    ],
+  },
+  {
+    icon: Globe,
+    group: "Web & Model Deployment",
+    skills: [
+      { name: "Streamlit", level: 85 },
+      { name: "FastAPI", level: 80 },
+      { name: "HTML & CSS", level: 85 },
+      { name: "REST APIs", level: 78 },
+    ],
+  },
+  {
+    icon: Wrench,
+    group: "Developer Tools",
+    skills: [
+      { name: "Git & GitHub", level: 85 },
+      { name: "Jupyter Notebook", level: 88 },
+      { name: "VS Code", level: 88 },
     ],
   },
 ];

@@ -43,7 +43,7 @@ function Typewriter() {
 }
 
 const STATS = [
-  { value: "5+", label: "AI Projects" },
+  { value: "6+", label: "AI/ML Projects" },
   { value: "10+", label: "Technologies" },
   { value: "7th", label: "Semester B.Tech" },
 ];
